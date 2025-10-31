@@ -6,7 +6,7 @@ data:
     preprocessed: "preprocessed/brain_cancer_mri_splits"
 
 optimizer:
-    name: "adam"
+    name: "Adam"
     lr: 0.001
     weight_decay: 0.0001
 
