@@ -76,4 +76,4 @@ def get_confusion_matrix(targets: list, predictions: list, class_names: list, sa
     cm_display = ConfusionMatrixDisplay(cm, display_labels=class_names)
     cm_display.plot(cmap="Greens")
     plt.savefig(f"artifacts/graphs/{save_name}.png")
-    
+    plt.show()

@@ -1,0 +1,103 @@
+{
+    "predictions": [
+        {
+            "image_path": "brain_glioma_0001.jpg",
+            "pred_label": "brain_glioma",
+            "probabilities": {
+                "brain_glioma": 0.9808,
+                "brain_menin": 0.007,
+                "brain_tumor": 0.0121
+            }
+        },
+        {
+            "image_path": "brain_glioma_0183.jpg",
+            "pred_label": "brain_glioma",
+            "probabilities": {
+                "brain_glioma": 0.9994,
+                "brain_menin": 0.0003,
+                "brain_tumor": 0.0003
+            }
+        },
+        {
+            "image_path": "brain_glioma_0367.jpg",
+            "pred_label": "brain_glioma",
+            "probabilities": {
+                "brain_glioma": 0.9968,
+                "brain_menin": 0.0016,
+                "brain_tumor": 0.0016
+            }
+        },
+        {
+            "image_path": "brain_menin_0071.jpg",
+            "pred_label": "brain_menin",
+            "probabilities": {
+                "brain_glioma": 0.0361,
+                "brain_menin": 0.9525,
+                "brain_tumor": 0.0114
+            }
+        },
+        {
+            "image_path": "brain_menin_0144.jpg",
+            "pred_label": "brain_menin",
+            "probabilities": {
+                "brain_glioma": 0.012,
+                "brain_menin": 0.9835,
+                "brain_tumor": 0.0045
+            }
+        },
+        {
+            "image_path": "brain_menin_0169.jpg",
+            "pred_label": "brain_menin",
+            "probabilities": {
+                "brain_glioma": 0.0026,
+                "brain_menin": 0.9591,
+                "brain_tumor": 0.0384
+            }
+        },
+        {
+            "image_path": "brain_menin_0253.jpg",
+            "pred_label": "brain_menin",
+            "probabilities": {
+                "brain_glioma": 0.0022,
+                "brain_menin": 0.9967,
+                "brain_tumor": 0.0012
+            }
+        },
+        {
+            "image_path": "brain_tumor_0021 - Copy.jpg",
+            "pred_label": "brain_tumor",
+            "probabilities": {
+                "brain_glioma": 0.0159,
+                "brain_menin": 0.1117,
+                "brain_tumor": 0.8724
+            }
+        },
+        {
+            "image_path": "brain_tumor_0038 - Copy.jpg",
+            "pred_label": "brain_tumor",
+            "probabilities": {
+                "brain_glioma": 0.0005,
+                "brain_menin": 0.0005,
+                "brain_tumor": 0.9991
+            }
+        },
+        {
+            "image_path": "brain_tumor_0105.jpg",
+            "pred_label": "brain_tumor",
+            "probabilities": {
+                "brain_glioma": 0.0007,
+                "brain_menin": 0.0007,
+                "brain_tumor": 0.9985
+            }
+        },
+        {
+            "image_path": "brain_tumor_0186.jpg",
+            "pred_label": "brain_tumor",
+            "probabilities": {
+                "brain_glioma": 0.0002,
+                "brain_menin": 0.0002,
+                "brain_tumor": 0.9996
+            }
+        }
+    ]
+}

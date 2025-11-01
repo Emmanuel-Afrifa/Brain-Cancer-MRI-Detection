@@ -17,7 +17,7 @@ class InferenceDataLoader:
     def __init__(self, dataset: Dataset, config: dict) -> None:
         self.dataset = dataset
         self.config = config
-        self.batch_size = self.config["train"]["batch"]
+        self.batch_size = self.config["train"]["batch_size"]
         
     def get_inference_loaders(self):
         dataloader = DataLoader(self.dataset, batch_size=self.batch_size, shuffle=False)

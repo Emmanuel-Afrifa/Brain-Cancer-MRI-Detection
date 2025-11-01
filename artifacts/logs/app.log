@@ -229,3 +229,90 @@
 2025-11-01 14:21:15,723 [INFO] src.evaluation.metrics Computing ROC-AUC score.
 2025-11-01 14:21:15,788 [INFO] src.utils.file_io Saving results (in csv format) to artifacts/results
 2025-11-01 14:21:15,809 [INFO] src.utils.file_io Saving the results (in json format) to artifacts/results
+2025-11-01 14:38:52,621 [INFO] __main__ Device detected: cpu
+2025-11-01 14:38:52,704 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:38:52,707 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:38:52,710 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:39:11,570 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:39:11,577 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:39:11,714 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:39:12,015 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:39:32,804 [INFO] src.inference.predict Making predictions
+2025-11-01 14:39:58,370 [INFO] src.inference.predict Prediction completed
+2025-11-01 14:39:58,390 [INFO] src.evaluation.metrics Computing accurary, precision, recall and f1 scores.
+2025-11-01 14:39:58,515 [INFO] src.evaluation.metrics Computing ROC-AUC score.
+2025-11-01 14:39:58,574 [INFO] src.utils.file_io Saving results (in csv format) to artifacts/results
+2025-11-01 14:39:58,591 [INFO] src.utils.file_io Saving the results (in json format) to artifacts/results
+2025-11-01 14:47:37,894 [INFO] __main__ Device detected: cpu
+2025-11-01 14:47:37,935 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:47:37,936 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:47:37,938 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:47:45,752 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:47:45,754 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:47:45,796 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:47:45,933 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:48:13,445 [INFO] __main__ Device detected: cpu
+2025-11-01 14:48:13,469 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:48:13,472 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:48:13,472 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:48:18,726 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:48:18,728 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:48:18,765 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:48:18,851 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:48:56,795 [INFO] __main__ Device detected: cpu
+2025-11-01 14:48:56,819 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:48:56,821 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:48:56,822 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:49:01,922 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:49:01,925 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:49:01,964 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:49:02,053 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:49:27,927 [INFO] __main__ Device detected: cpu
+2025-11-01 14:49:27,954 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:49:27,955 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:49:27,956 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:49:33,215 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:49:33,217 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:49:33,272 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:49:33,392 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:49:33,476 [INFO] src.inference.predict Making predictions
+2025-11-01 14:51:12,404 [INFO] __main__ Device detected: cpu
+2025-11-01 14:51:12,430 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:51:12,432 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:51:12,434 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:51:17,356 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:51:17,359 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:51:17,405 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:51:17,502 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:51:17,582 [INFO] src.inference.predict Making predictions
+2025-11-01 14:51:17,836 [INFO] src.inference.predict Prediction completed
+2025-11-01 14:51:17,838 [INFO] src.utils.file_io Saving results (in csv format) to artifacts/results
+2025-11-01 14:51:17,839 [INFO] src.utils.file_io Saving the results (in json format) to artifacts/results
+2025-11-01 14:53:51,311 [INFO] __main__ Device detected: cpu
+2025-11-01 14:53:51,342 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:53:51,343 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:53:51,344 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:53:57,438 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:53:57,439 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:53:57,468 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:53:57,558 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:54:13,194 [INFO] src.inference.predict Making predictions
+2025-11-01 14:54:33,737 [INFO] src.inference.predict Prediction completed
+2025-11-01 14:54:33,739 [INFO] src.evaluation.metrics Computing accurary, precision, recall and f1 scores.
+2025-11-01 14:54:33,766 [INFO] src.evaluation.metrics Computing ROC-AUC score.
+2025-11-01 14:54:33,799 [INFO] src.utils.file_io Saving results (in csv format) to artifacts/results
+2025-11-01 14:54:33,812 [INFO] src.utils.file_io Saving the results (in json format) to artifacts/results
+2025-11-01 14:57:31,859 [INFO] __main__ Device detected: cpu
+2025-11-01 14:57:31,888 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-01 14:57:31,889 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-01 14:57:31,890 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-01 14:57:38,816 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-01 14:57:38,818 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:57:38,852 [INFO] src.data.data_module Loading the saved mean and std
+2025-11-01 14:57:38,945 [INFO] __main__ Loading saved model parameters
+2025-11-01 14:57:49,196 [INFO] src.inference.predict Making predictions
+2025-11-01 14:58:02,882 [INFO] src.inference.predict Prediction completed
+2025-11-01 14:58:02,888 [INFO] src.evaluation.metrics Computing accurary, precision, recall and f1 scores.
+2025-11-01 14:58:02,907 [INFO] src.evaluation.metrics Computing ROC-AUC score.
+2025-11-01 14:58:02,924 [INFO] src.utils.file_io Saving results (in csv format) to artifacts/results
+2025-11-01 14:58:02,937 [INFO] src.utils.file_io Saving the results (in json format) to artifacts/results

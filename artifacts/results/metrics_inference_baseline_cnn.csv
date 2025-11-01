@@ -1,0 +1,12 @@
+image_path,pred_label,prob_brain_glioma,prob_brain_menin,prob_brain_tumor
+brain_glioma_0001.jpg,brain_glioma,0.9808,0.007,0.0121
+brain_glioma_0183.jpg,brain_glioma,0.9994,0.0003,0.0003
+brain_glioma_0367.jpg,brain_glioma,0.9968,0.0016,0.0016
+brain_menin_0071.jpg,brain_menin,0.0361,0.9525,0.0114
+brain_menin_0144.jpg,brain_menin,0.012,0.9835,0.0045
+brain_menin_0169.jpg,brain_menin,0.0026,0.9591,0.0384
+brain_menin_0253.jpg,brain_menin,0.0022,0.9967,0.0012
+brain_tumor_0021 - Copy.jpg,brain_tumor,0.0159,0.1117,0.8724
+brain_tumor_0038 - Copy.jpg,brain_tumor,0.0005,0.0005,0.9991
+brain_tumor_0105.jpg,brain_tumor,0.0007,0.0007,0.9985
+brain_tumor_0186.jpg,brain_tumor,0.0002,0.0002,0.9996
