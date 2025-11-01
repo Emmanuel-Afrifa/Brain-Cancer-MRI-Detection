@@ -28,3 +28,4 @@ def compute_mean_std(loader: DataLoader) -> tuple[torch.Tensor, torch.Tensor]:
     std = (channel_squared_sum / n_batches - (mean **2)).sqrt()
     
     return mean, std
+

@@ -26,6 +26,11 @@ from .evaluation import metrics
 # model
 from .models import BrainScanCNN
 
+# preprocessing
+from .preprocessing.convert_to_RGB import ConvertToRGB
+from .preprocessing.preprocessing import compute_mean_std
+
+
 # training
 from .training.trainer import ModelTrainer
 from .training.callbacks import earlystopping, checkpointing
@@ -46,6 +51,8 @@ __all__ = [
     "DataSplitter",
     "metrics",
     "BrainScanCNN",
+    "ConvertToRGB",
+    "compute_mean_std",
     "ModelTrainer",
     "earlystopping",
     "checkpointing",

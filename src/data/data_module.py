@@ -1,4 +1,5 @@
 from pathlib import Path
+from src.preprocessing.convert_to_RGB import ConvertToRGB
 from src.preprocessing.preprocessing import compute_mean_std
 from torch import Tensor
 from torch.utils.data import DataLoader
@@ -40,6 +41,7 @@ class BrainMRIDataModule:
         """
         if training:
             transform = transforms.Compose([
+                ConvertToRGB(),
                 transforms.Resize(self.img_size),
                 transforms.RandomHorizontalFlip(),
                 transforms.RandomRotation(5),
@@ -50,6 +52,7 @@ class BrainMRIDataModule:
             ])  
         else: 
             transform = transforms.Compose([
+                ConvertToRGB(),
                 transforms.Resize(self.img_size),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=self.mean, std=self.std)
@@ -77,6 +80,7 @@ class BrainMRIDataModule:
                 Computed mean and standard deviation.
         """
         transform = transforms.Compose([
+            ConvertToRGB(),
             transforms.Resize(self.img_size),
             transforms.ToTensor()
         ])
