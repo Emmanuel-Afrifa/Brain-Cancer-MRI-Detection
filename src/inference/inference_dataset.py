@@ -9,7 +9,20 @@ import torch
 
 logger = logging.getLogger(__name__)
 
-class InferenceData(Dataset):
+class InferenceDataset(Dataset):
+    """
+    This function creates an Dataset object for the data on which we wish to make predictions.
+
+    Attributes:
+        image_dir (str): 
+            Path to image directory.
+        mean (list):
+            Computed per-channel mean.
+        std (list):
+            Computed per-channed std.
+        config (dict):
+            Global configurations.
+    """
     def __init__(self, image_dir: str, mean: list | torch.Tensor, std: list | torch.Tensor, config: dict) -> None:
         super().__init__()
         self.image_dir = image_dir

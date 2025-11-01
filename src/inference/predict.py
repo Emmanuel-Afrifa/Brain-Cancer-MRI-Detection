@@ -1,6 +1,9 @@
 from tqdm import tqdm
 from torch.nn.functional import softmax
+import logging
 import torch
+
+logger = logging.getLogger(__name__)
 
 def predict(data_loader, model: torch.nn.Module, device: str | torch.device = "cpu") -> tuple:
     """
@@ -25,12 +28,13 @@ def predict(data_loader, model: torch.nn.Module, device: str | torch.device = "c
     all_pred_probs = []
     
     with torch.no_grad():
+        logger.info("Making predictions")
         for data, _ in tqdm(data_loader, desc="Predicing"):
             data.to(device)
             output = model(data)
             probs = softmax(output, dim=1)
             all_pred_probs.extend(probs.cpu().numpy().tolist())
             all_preds.extend(torch.argmax(probs, dim=1).cpu().numpy().astype(int).tolist())
-        
+        logger.info("Prediction completed")
     return all_preds, all_pred_probs
             
