@@ -7,7 +7,7 @@ This submodule contains utility functions for project configurations and analysi
 - set_seed: Sets the seed for all RNGs for reproducibility of the project
 """
 
-from .file_io import load_config, load_objects, save_objects
+from .file_io import load_config, load_objects, save_objects, save_predictions
 from .logger import setup_logging
 from .seed import set_seed
 
@@ -15,6 +15,7 @@ __all__ = [
     "load_config",
     "load_objects",
     "save_objects",
+    "save_predictions",
     "setup_logging",
     "set_seed"
 ]

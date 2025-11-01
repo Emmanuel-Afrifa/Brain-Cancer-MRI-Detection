@@ -40,7 +40,7 @@ from .training.optimizer import get_optimizer, get_lr_scheduler
 
 
 # utils
-from .utils.file_io import save_objects, load_config, load_objects
+from .utils.file_io import save_objects, load_config, load_objects, save_predictions
 from .utils.logger import setup_logging
 from .utils.seed import set_seed
 
@@ -61,6 +61,7 @@ __all__ = [
     "save_objects",
     "load_config",
     "load_objects",
+    "save_predictions",
     "setup_logging",
     "set_seed"    
 ]
