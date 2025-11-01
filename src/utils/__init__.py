@@ -10,6 +10,9 @@ This submodule contains utility functions for project configurations and analysi
 from .file_io import load_config, load_objects, save_objects, save_predictions
 from .logger import setup_logging
 from .seed import set_seed
+from .visualizations import class_counter, plot_raw_vs_transformed_imgs, plot_train_vs_val, \
+        plot_learning_rates
+
 
 __all__ = [
     "load_config",
@@ -17,5 +20,9 @@ __all__ = [
     "save_objects",
     "save_predictions",
     "setup_logging",
-    "set_seed"
+    "set_seed",
+    "class_counter",
+    "plot_raw_vs_transformed_imgs",
+    "plot_train_vs_val",
+    "plot_learning_rates"
 ]

@@ -49,7 +49,7 @@ def load_objects(file_path: str):
             Path to saved file
     """
     logger.info(f"Loading object from {file_path}")
-    load(open(file_path, "rb")) 
+    return load(open(file_path, "rb")) 
     
 def save_predictions(pred_labels: list, pred_probs: list, image_paths: list[str], class_names: list, 
                      metrics: tuple | None = None, save_name: str = "") -> dict:

@@ -43,6 +43,7 @@ from .training.optimizer import get_optimizer, get_lr_scheduler
 from .utils.file_io import save_objects, load_config, load_objects, save_predictions
 from .utils.logger import setup_logging
 from .utils.seed import set_seed
+from .utils.visualizations import class_counter, plot_raw_vs_transformed_imgs, plot_train_vs_val, plot_learning_rates
 
 
 __all__ = [
@@ -63,5 +64,9 @@ __all__ = [
     "load_objects",
     "save_predictions",
     "setup_logging",
-    "set_seed"    
+    "set_seed",
+    "class_counter",
+    "plot_raw_vs_transformed_imgs",
+    "plot_train_vs_val",
+    "plot_learning_rates"
 ]
