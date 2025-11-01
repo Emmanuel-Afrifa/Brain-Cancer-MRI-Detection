@@ -1,7 +1,9 @@
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 import logging
+import os
 import shutil
+
 
 logging = logging.getLogger(__name__)
 
@@ -44,8 +46,10 @@ class DataSplitter:
             val, test = train_test_split(tmp, test_size=0.5, random_state=self.seed)
             
             for subset, subset_files in zip(["train", "val", "test"], [train, val, test]):
+                if os.path.exists(subset):
+                    shutil.rmtree(subset)
                 out_dir = output_dir / subset / cls
-                output_dir.mkdir(parents=True, exist_ok=True)
+                out_dir.mkdir(parents=True, exist_ok=True)
                 for file in subset_files:
                     shutil.copy(file, out_dir / file.name)
         logging.info("Splitting operation completed.")

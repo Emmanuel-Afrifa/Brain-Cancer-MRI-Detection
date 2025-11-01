@@ -57,7 +57,7 @@ def get_lr_scheduler(config: dict, optimizer: Optimizer) -> LRScheduler:
     """
     name = config["name"]
     gamma = config["gamma"]
-    step_size = config["StepLR"]
+    step_size = config["step_size"]
     
     logger.info(f"Create LR Scheduler {name}")
     

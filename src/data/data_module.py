@@ -7,6 +7,7 @@ from torchvision.datasets import ImageFolder
 import json
 import logging
 import os
+import torch
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +17,8 @@ class BrainMRIDataModule:
         self.img_size = self.config["data"]["img_size"]
         self.seed = self.config["seed"]
         self.batch_size = self.config["train"]["batch_size"]
-        self.preprocessed_data_dir = Path(self.config["data"]["preprocessed/brain_cancer_mri_splits"])
+        self.preprocessed_data_dir = Path(self.config["data"]["preprocessed"])
+        self.generator = torch.Generator().manual_seed(self.seed)
         self.mean = None
         self.std = None
         
@@ -79,14 +81,14 @@ class BrainMRIDataModule:
             transforms.ToTensor()
         ])
         train_ds = ImageFolder(train_path, transform=transform)
-        train_dl = DataLoader(train_ds, shuffle=False, batch_size=self.batch_size, generator=self.seed)
+        train_dl = DataLoader(train_ds, shuffle=False, batch_size=self.batch_size, generator=self.generator)
         logging.info(f"Computing mean and std for the training set ({train_path}).")
         self.mean, self.std = compute_mean_std(train_dl)
         
         if save_mean_std:
             if save_mean_std_path:
                 with open(save_mean_std_path, "w") as f:
-                    json.dump({"mean": self.mean, "std": self.std}, f)
+                    json.dump({"mean": self.mean.tolist(), "std": self.std.tolist()}, f)
             else:
                 logging.error(f"If `save_mean_std` is set to `True`, then `save_mean_std_path` must not be an empty string.")
                 raise ValueError(f"If `save_mean_std` is set to `True`, then `save_mean_std_path` must not be an empty string.")
@@ -106,7 +108,9 @@ class BrainMRIDataModule:
         """
         if os.path.exists(save_mean_std_path):
             with open(save_mean_std_path, "r") as f:
-                self.mean, self.std = json.load(f)
+                logger.info("Loading the saved mean and std")
+                saved_mean_std = json.load(f)
+                self.mean, self.std = saved_mean_std["mean"], saved_mean_std["std"]
         else:
             self.mean, self.std = self.compute_train_stats(self.preprocessed_data_dir / "train", save_mean_std=True, save_mean_std_path=save_mean_std_path)
         
@@ -130,7 +134,7 @@ class BrainMRIDataModule:
         train_ds, val_ds, test_ds = self.get_datasets(save_mean_std_path="artifacts/preprocessing/normalization_mean_std.json")
         return (
             DataLoader(train_ds, batch_size=self.batch_size, shuffle=True),
-            DataLoader(val_ds, batch_size=self.batch_size, shuffle=False, generator=self.seed),
-            DataLoader(test_ds, batch_size=self.batch_size, shuffle=False, generator=self.seed)
+            DataLoader(val_ds, batch_size=self.batch_size, shuffle=False, generator=self.generator),
+            DataLoader(test_ds, batch_size=self.batch_size, shuffle=False, generator=self.generator)
         )
     

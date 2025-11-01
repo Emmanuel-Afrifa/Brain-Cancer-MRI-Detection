@@ -21,7 +21,7 @@ class BrainScanCNN(torch.nn.Module):
             Defines how the model should be printed.
     """
     def __init__(self, num_classes: int, model_name: str = "Brain Scan CNN") -> None:
-        super().__str__()
+        super().__init__()
         self.model_name = model_name
         self.num_classes = num_classes
         self.conv1 = Conv2d(in_channels=3, out_channels=16, kernel_size=3, padding=1)
@@ -50,7 +50,8 @@ class BrainScanCNN(torch.nn.Module):
         x = self.pool(F.relu(self.bn4(self.conv4(x))))
         x = self.pool(F.relu(self.bn5(self.conv5(x))))
         
-        x = torch.flatten(x)
+        x = torch.flatten(x, start_dim=1)
+        # n_features = x.view(x.size(0), -1) # determines the in_features after flattening dynamically.
         
         x = F.relu(self.bn_fc1(self.fc1(x)))
         x = F.relu(self.bn_fc2(self.fc2(x)))

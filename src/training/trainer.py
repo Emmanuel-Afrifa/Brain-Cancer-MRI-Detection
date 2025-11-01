@@ -1,6 +1,7 @@
 from collections import defaultdict
 from sklearn.metrics import accuracy_score, f1_score
 from src.training.callbacks import checkpointing
+from src.training.optimizer import get_lr_scheduler, get_optimizer
 from src.utils.file_io import save_objects
 from torch.optim.lr_scheduler import LRScheduler
 from torch.optim.optimizer import Optimizer
@@ -11,11 +12,14 @@ import torch
 
 
 class ModelTrainer:
-    def __init__(self, config: dict) -> None:
+    def __init__(self, config: dict, model: torch.nn.Module) -> None:
         self.config = config
+        self.model = model
         self.epochs = self.config["train"]["epochs"]
         self.batch_size = self.config["train"]["batch_size"]
         self.logger = logging.getLogger(__name__)
+        # self.optimizer = get_optimizer(self.config["optimizer"], model=model)
+        # self.lr_scheduler = get_lr_scheduler(self.config["scheduler"], optimizer=self.optimizer)
         
     def _one_epoch_run(self, data_loader, model: torch.nn.Module, optimizer: Optimizer, 
                        loss_func: torch.nn.modules.loss._Loss,  device: str | torch.device = "cpu") -> float:
@@ -194,3 +198,4 @@ class ModelTrainer:
     
         save_objects(save_path=save_history_path, object=history)
         return history
+
