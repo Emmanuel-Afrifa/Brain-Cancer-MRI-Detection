@@ -10,7 +10,6 @@ This project builds a deep learning model to automatically detect and classify b
   - [Model Architecture](#model-architecture)
   - [Evaluation](#evaluation)
     - [Detailed breakdown/Interpretation of metrics:](#detailed-breakdowninterpretation-of-metrics)
-  - [](#)
   - [Directory Structure](#directory-structure)
   - [Usage](#usage)
   - [Relevance of the project](#relevance-of-the-project)
@@ -111,23 +110,25 @@ Estimated Total Size (MB): 830.42
 - Visual inspection of of the confusion matrix. 
 
 ### Detailed breakdown/Interpretation of metrics:  
-Model performance can be summarized using four key outcomes:
+- Model performance can be summarized using four key outcomes:
 
 - **True Positive (TP):** The model correctly identifies that an image belongs to a specific class and that is true indeed.  
 - **True Negative (TN):** The model correctly identifies that an image does not belongs to a specific class and that is true indeed.  
 - **False Positive (FP):** The model incorrectly classifies that an image belongs to a specific class but that is untrue.  
 - **False Negative (FN):** The model fails to detect that an image belongs to that specific class when it infact belongs to that class.
 
-In medical imaging, **false negatives (FN)** are typically **more dangerous** than false positives (FP).  
+- In medical imaging, **false negatives (FN)** are typically **more dangerous** than false positives (FP).  
 A false negative means a tumor is missed (or misclassified), which can lead to delayed diagnosis and treatment.  
 A false positive, while undesirable, usually results in additional testing and verification — an inconvenience rather than a medical risk.
+
+- The full metrics can be found in `artifacts/results/metrics_test_eval_baseline_brain_cnn.json` under the `"metrics"` key.
 
 The image of the classification matrix of the model's performance on the hold out test set is shown below (`Figure 2`).
 <figure>
     <img src="artifacts/graphs/confusion_matrix_eval_basline_cnn.png" alt="Confusion Matrix" />
     <figcaption>Figure 2: Confusion matrix</figcaption>
 </figure>
----
+
 
 ## Directory Structure
 ```
