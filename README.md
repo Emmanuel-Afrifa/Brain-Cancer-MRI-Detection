@@ -9,6 +9,7 @@ This project builds a deep learning model to automatically detect and classify b
   - [Dataset Description](#dataset-description)
   - [Model Architecture](#model-architecture)
   - [Evaluation](#evaluation)
+    - [Detailed breakdown/Interpretation of metrics:](#detailed-breakdowninterpretation-of-metrics)
   - [](#)
   - [Directory Structure](#directory-structure)
   - [Usage](#usage)
@@ -109,7 +110,7 @@ Estimated Total Size (MB): 830.42
 - Per-class confusion matrix  
 - Visual inspection of of the confusion matrix. 
 
-***Detailed breakdown/Interpretation of metrics:***
+### Detailed breakdown/Interpretation of metrics:  
 Model performance can be summarized using four key outcomes:
 
 - **True Positive (TP):** The model correctly identifies that an image belongs to a specific class and that is true indeed.  
