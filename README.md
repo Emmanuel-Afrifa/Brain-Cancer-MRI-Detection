@@ -112,10 +112,10 @@ Estimated Total Size (MB): 830.42
 ### Detailed breakdown/Interpretation of metrics:  
 - Model performance can be summarized using four key outcomes:
 
-- **True Positive (TP):** The model correctly identifies that an image belongs to a specific class and that is true indeed.  
-- **True Negative (TN):** The model correctly identifies that an image does not belongs to a specific class and that is true indeed.  
-- **False Positive (FP):** The model incorrectly classifies that an image belongs to a specific class but that is untrue.  
-- **False Negative (FN):** The model fails to detect that an image belongs to that specific class when it infact belongs to that class.
+  - **True Positive (TP):** The model correctly identifies that an image belongs to a specific class and that is true indeed.  
+  - **True Negative (TN):** The model correctly identifies that an image does not belongs to a specific class and that is true indeed.  
+  - **False Positive (FP):** The model incorrectly classifies that an image belongs to a specific class but that is untrue.  
+  - **False Negative (FN):** The model fails to detect that an image belongs to that specific class when it infact belongs to that class.
 
 - In medical imaging, **false negatives (FN)** are typically **more dangerous** than false positives (FP).  
 A false negative means a tumor is missed (or misclassified), which can lead to delayed diagnosis and treatment.  
