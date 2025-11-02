@@ -43,7 +43,7 @@ The dataset contains MRI scans categorized into three classes:
     - Random Horizontal flips
     - Random Rotations (5 degrees)
     - Random crop resizing ($\pm$ 0.05 of the original image)
-    - Random constrats adjustments (about 0.05)
+    - Random contrasts adjustments (about 0.05)
   - As we can see, all of these augmentations are quite small because in as much we wish to increase the variability in the data for better model generalization, we don't also want to completely distort the datasets,  which might be extremely harmful in the case of medical imaging analysis. A picture of the raw images vs their transformed versions is shown in `Figure 1`.
   - **Normalization:** The per-channel mean and standard deviation (std) were computed from the training set and used to normalize the loaded datasets. This was to help the model training converge faster. Because the images were grayscale, all three channels had the same mean. Same for the standard deviation.
 <figure>
