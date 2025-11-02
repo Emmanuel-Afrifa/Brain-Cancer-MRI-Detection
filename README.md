@@ -50,7 +50,9 @@ The dataset contains MRI scans categorized into three classes:
     <img src="artifacts/graphs/raw_vs_transformed_imgs.png" alt="Raw images vs transformed images" />
     <figcaption>Figure 1: Raw images vs transformed images</figcaption>
 </figure>
-<br>
+
+
+
 - The original datasets had not train, val and test sets hence a custom class was created to split the data into train, val and test sets, while keeping the per-class folder structure. The results were saved to `preprocessed/brain_cancer_mri_splits`, and the custom class used can be found in `src/data/data_splitter.py`.
 
 
@@ -128,7 +130,9 @@ The image of the classification matrix of the model's performance on the hold ou
     <img src="artifacts/graphs/confusion_matrix_eval_basline_cnn.png" alt="Confusion Matrix" />
     <figcaption>Figure 2: Confusion matrix</figcaption>
 </figure>
-<br>
+
+
+
 - From the confusion matrix, we can see that the model is performing extremely well on the test set.
 
 
