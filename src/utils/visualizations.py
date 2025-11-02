@@ -47,7 +47,7 @@ def class_counter(dataset, title: str, savename: str = "") -> pd.Series:
 
 
 
-def plot_raw_vs_transformed_imgs(dataset, mean: list, std: list, n_samples: int = 10, save_name: str = "") -> None:
+def plot_raw_vs_transformed_imgs(dataset, mean: list, std: list, config: dict, n_samples: int = 10, save_name: str = "") -> None:
     """
     This function randomly choses `n_samples` from the dataset, plots the raw image next to the transformed
     image to visualize the augmentations applied to the images.
@@ -59,12 +59,15 @@ def plot_raw_vs_transformed_imgs(dataset, mean: list, std: list, n_samples: int 
             Computed mean during training (used for denormalizing transformed images)
         std (list): 
             Computed std during training (used for denormalizing transformed images)
+        config (dict):
+            Global configurations
         n_samples (int, optional): 
             Number of samples to choose from the dataset. Defaults to 10.
         save_name (str, optional): 
             Name used to save the model. Defaults to "".
     """
-    indices = torch.randint(0, len(dataset), (n_samples,))
+    g = torch.Generator().manual_seed(88)
+    indices = torch.randint(0, len(dataset), (n_samples,), generator=g)
     
     print(mean, std)
     plt.figure(figsize=(6, n_samples*2))
@@ -91,7 +94,7 @@ def plot_raw_vs_transformed_imgs(dataset, mean: list, std: list, n_samples: int 
         plt.axis("off")
     plt.tight_layout()
     if save_name:
-        plt.savefig(f"/artifacts/graphs/{save_name}.png")
+        plt.savefig(f"artifacts/graphs/{save_name}.png")
     plt.show()
     
 
