@@ -44,7 +44,7 @@ The dataset contains MRI scans categorized into three classes:
     - Random Rotations (5 degrees)
     - Random crop resizing ($\pm$ 0.05 of the original image)
     - Random contrasts adjustments (about 0.05)
-  - As we can see, all of these augmentations are quite small because in as much we wish to increase the variability in the data for better model generalization, we don't also want to completely distort the datasets,  which might be extremely harmful in the case of medical imaging analysis. A picture of the raw images vs their transformed versions is shown in `Figure 1`.
+  - As we can see, all of these augmentations are quite small because in as much we wish to increase the variability in the data for better model generalization, we also don't want to completely distort the datasets,  which might be extremely harmful in the case of medical imaging analysis. A picture of the raw images vs their transformed versions is shown in `Figure 1`.
   - **Normalization:** The per-channel mean and standard deviation (std) were computed from the training set and used to normalize the loaded datasets. This was to help the model training converge faster. Because the images were grayscale, all three channels had the same mean. Same for the standard deviation.
 <figure>
     <img src="artifacts/graphs/raw_vs_transformed_imgs.png" alt="Raw images vs transformed images" />
@@ -59,7 +59,7 @@ The dataset contains MRI scans categorized into three classes:
 The CNN model (`BrainScanCNN`) consists of:
 - Convolutional + BatchNorm + ReLU blocks  
 - MaxPooling layers  
-- Fully connected classifier  
+- Fully connected layers  
 - Softmax output layer for 3-class prediction  
 - The optimizer used was the `Adam` optimizer.
 - We used a standard `CrossEntropyLoss` function for training.
