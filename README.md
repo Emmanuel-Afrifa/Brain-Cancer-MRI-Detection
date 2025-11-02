@@ -50,7 +50,7 @@ The dataset contains MRI scans categorized into three classes:
     <img src="artifacts/graphs/raw_vs_transformed_imgs.png" alt="Raw images vs transformed images" />
     <figcaption>Figure 1: Raw images vs transformed images</figcaption>
 </figure>
-
+<br>
 - The original datasets had not train, val and test sets hence a custom class was created to split the data into train, val and test sets, while keeping the per-class folder structure. The results were saved to `preprocessed/brain_cancer_mri_splits`, and the custom class used can be found in `src/data/data_splitter.py`.
 
 
@@ -128,9 +128,12 @@ The image of the classification matrix of the model's performance on the hold ou
     <img src="artifacts/graphs/confusion_matrix_eval_basline_cnn.png" alt="Confusion Matrix" />
     <figcaption>Figure 2: Confusion matrix</figcaption>
 </figure>
+<br>
+- From the confusion matrix, we can see that the model is performing extremely well on the test set.
 
 
 ## Directory Structure
+- This shows the project organisation and files structure to make it easier to find relevant information.
 ```
 ├── artifacts/
 │ ├── graphs/ # saved graphs from the project
@@ -152,19 +155,36 @@ The image of the classification matrix of the model's performance on the hold ou
 │ ├── models/ # Creates the custom model architecture used in this project
 │ ├── preprocessing/ # Contains functions used in data preprocessing
 │ ├── training/ # Contains classes and functions for defining callbacks and training loops
-│ └── utils/ # Contains utility functions for setting up logging, loading and saving objects/results, and functions plots.
+│ ├── utils/ # Contains utility functions for setting up logging, loading and saving objects/results, and functions plots.
+│ ├── __init__.py
+│ └── main.py # entry point for the project (app)
 └── README.md
 
 ```
+
 ## Usage
----
+- Clone the project repo
+  - if you use `HTTPS:`
+    ```
+        git clone https://github.com/Emmanuel-Afrifa/Brain-Cancer-MRI-Detection.git
+    ```
+  - If you use `SSH:`
+    ```
+        git clone git@github.com:Emmanuel-Afrifa/Brain-Cancer-MRI-Detection.git
+    ```
+
+- Change to the project directory
+    ```
+        cd path/to/Brain-Cancer-MRI-Detection/
+    ```
+
 - For training the model
     ```
     python -m src.main --mode train --config configs/config.yaml 
     ```
-- For evaluation of the model performance
+- For evaluation of the model performance on the hold out test set
     ```
-    python -m src.main --mode predict --config configs/config.yaml --input trial_predict_imgs
+    python -m src.main --mode eval --config configs/config.yaml
     ```
 
 - For use of the trained model to make predictions
