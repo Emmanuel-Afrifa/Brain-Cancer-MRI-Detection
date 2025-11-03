@@ -12,7 +12,7 @@ This package provides tools for:
 - Evaluation and inference
 """
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 __author__ = "Emmanuel Afrifa"
 __description__ = "Brain Cancer MRI detection using Machine Learning"
 

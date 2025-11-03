@@ -127,7 +127,7 @@ class BrainMRIDataModule:
         
         return train_dataset, val_dataset, test_dataset
         
-    def get_dataloaders(self) -> tuple:
+    def get_dataloaders(self, save_mean_std_path="artifacts/preprocessing/normalization_mean_std.json") -> tuple:
         """
         This function returns the data loaders for the three datasets (train, val and test sets).
 
@@ -135,7 +135,7 @@ class BrainMRIDataModule:
             tuple: 
                 Tuple of the data loaders for the train, val and test sets respectively.
         """
-        train_ds, val_ds, test_ds = self.get_datasets(save_mean_std_path="artifacts/preprocessing/normalization_mean_std.json")
+        train_ds, val_ds, test_ds = self.get_datasets(save_mean_std_path=save_mean_std_path)
         return (
             DataLoader(train_ds, batch_size=self.batch_size, shuffle=True),
             DataLoader(val_ds, batch_size=self.batch_size, shuffle=False, generator=self.generator),

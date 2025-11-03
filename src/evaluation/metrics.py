@@ -4,12 +4,15 @@ from sklearn.metrics import (roc_auc_score, accuracy_score, precision_score,
 from typing import Literal
 import logging
 import matplotlib.pyplot as plt
+import torch
 
 logger = logging.getLogger(__name__)
 
 avg_typ = Literal['micro', 'macro', 'samples', 'weighted']
 
-def compute_metrics(targets: list, preds: list, pred_probs: list | None = None, class_names: list = [], average: avg_typ = "macro") -> tuple:
+def compute_metrics(targets: list | torch.Tensor, preds: list | torch.Tensor, 
+                    pred_probs: list | torch.Tensor | None = None, class_names: list = [], 
+                    average: avg_typ = "macro") -> tuple:
     """
     This function computes the classification metrics
 
