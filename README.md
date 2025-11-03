@@ -13,6 +13,8 @@ This project builds a deep learning model to automatically detect and classify b
   - [Directory Structure](#directory-structure)
   - [Usage](#usage)
   - [Relevance of the project](#relevance-of-the-project)
+  - [Testing](#testing)
+  - [🧪 Running Tests](#-running-tests)
   - [Future Work](#future-work)
   - [Author](#author)
   - [Acknowledgement](#acknowledgement)
@@ -169,30 +171,30 @@ The image of the classification matrix of the model's performance on the hold ou
 ## Usage
 - Clone the project repo
   - if you use `HTTPS:`
-    ```
+    ```bash
         git clone https://github.com/Emmanuel-Afrifa/Brain-Cancer-MRI-Detection.git
     ```
   - If you use `SSH:`
-    ```
+    ```bash
         git clone git@github.com:Emmanuel-Afrifa/Brain-Cancer-MRI-Detection.git
     ```
 
 - Change to the project directory
-    ```
+    ```bash
         cd path/to/Brain-Cancer-MRI-Detection/
     ```
 
 - For training the model
-    ```
+    ```bash
     python -m src.main --mode train --config configs/config.yaml 
     ```
 - For evaluation of the model performance on the hold out test set
-    ```
+    ```bash
     python -m src.main --mode eval --config configs/config.yaml
     ```
 
 - For use of the trained model to make predictions
-    ```
+    ```bash
     python -m src.main --mode predict --config configs/config.yaml --input trial_predict_imgs
     ```
 
@@ -206,6 +208,15 @@ The image of the classification matrix of the model's performance on the hold ou
 
 - **Scalable Screening in Low-Resource Settings:**  In regions with limited access to radiology specialists, deploying such models could enable preliminary tumor screening, helping prioritize patients who need urgent expert review.
 
+## Testing
+## 🧪 Running Tests
+
+This project includes unit tests for datasets, models, and training loops.
+
+To run all tests locally:
+```bash
+pytest -v
+```
 
 ## Future Work
 - Experiment with pre-trained models (e.g., ResNet, EfficientNet)
