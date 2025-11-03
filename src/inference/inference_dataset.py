@@ -46,7 +46,6 @@ class InferenceDataset(Dataset):
         img_path = self.img_paths[index]
         image = Image.open(img_path).convert("RGB")
 
-        if self.transform:
-            image = self.transform(image)
+        image = self.transform(image)
 
         return image, os.path.basename(img_path)
