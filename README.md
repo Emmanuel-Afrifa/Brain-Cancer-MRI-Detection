@@ -214,9 +214,18 @@ The image of the classification matrix of the model's performance on the hold ou
 This project includes unit tests for datasets, models, and training loops.
 
 To run all tests locally:
-```bash
-pytest -v
-```
+- Navigate to the root of the project
+    ```bach
+    cd path/to/Brain-Cancer-MRI-Detection/
+    ```
+- First, install the package in editable mode: 
+    ```bash
+    pip install -e .
+    ```
+- Then run
+    ```bash
+    pytest -v
+    ```
 
 ## Future Work
 - Experiment with pre-trained models (e.g., ResNet, EfficientNet)
