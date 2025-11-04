@@ -14,7 +14,6 @@ This project builds a deep learning model to automatically detect and classify b
   - [Usage](#usage)
   - [Relevance of the project](#relevance-of-the-project)
   - [Testing](#testing)
-  - [🧪 Running Tests](#-running-tests)
   - [Future Work](#future-work)
   - [Author](#author)
   - [Acknowledgement](#acknowledgement)
@@ -209,8 +208,6 @@ The image of the classification matrix of the model's performance on the hold ou
 - **Scalable Screening in Low-Resource Settings:**  In regions with limited access to radiology specialists, deploying such models could enable preliminary tumor screening, helping prioritize patients who need urgent expert review.
 
 ## Testing
-## 🧪 Running Tests
-
 This project includes unit tests for datasets, models, and training loops.
 
 To run all tests locally:
