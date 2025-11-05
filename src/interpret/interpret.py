@@ -199,7 +199,7 @@ class BrainGradCAM:
         axes[1].axis("off")
 
         axes[2].imshow(overlay)
-        axes[2].set_title(f"Overlay")
+        axes[2].set_title(f"Heatmap Superimposed Image")
         axes[2].axis("off")
         plt.suptitle(title, fontsize=14, fontweight='bold')
 
