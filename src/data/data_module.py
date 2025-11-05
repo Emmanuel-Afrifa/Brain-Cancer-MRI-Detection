@@ -3,6 +3,7 @@ from src.preprocessing.convert_to_RGB import ConvertToRGB
 from src.preprocessing.preprocessing import compute_mean_std
 from torch import Tensor
 from torch.utils.data import DataLoader
+from src.utils.file_io import load_saved_mean_std
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 import json
@@ -111,10 +112,7 @@ class BrainMRIDataModule:
                 The training, validation and test datasets.
         """
         if os.path.exists(save_mean_std_path):
-            with open(save_mean_std_path, "r") as f:
-                logger.info("Loading the saved mean and std")
-                saved_mean_std = json.load(f)
-                self.mean, self.std = saved_mean_std["mean"], saved_mean_std["std"]
+            self.mean, self.std = load_saved_mean_std(save_mean_std_path)
         else:
             self.mean, self.std = self.compute_train_stats(self.preprocessed_data_dir / "train", save_mean_std=True, save_mean_std_path=save_mean_std_path)
         

@@ -1,9 +1,9 @@
-from pathlib import Path
 from pickle import load, dump
 import csv
 import json
 import logging
 import os
+import torch
 import yaml
 
 logger = logging.getLogger(__name__)
@@ -50,7 +50,31 @@ def load_objects(file_path: str):
     """
     logger.info(f"Loading object from {file_path}")
     return load(open(file_path, "rb")) 
-    
+
+def load_saved_mean_std(mean_std_save_path: str) -> tuple[torch.Tensor, torch.Tensor]:
+    """
+    This function loads the computed mean and std
+
+    Args:
+        mean_std_save_path (str): 
+            Path to saved mean and std
+
+    Raises:
+        ValueError: 
+            Raised when the specified path does not exist
+
+    Returns:
+        tuple[torch.Tensor, torch.Tensor]: 
+            Loaded mean and std tensors
+    """
+    if os.path.exists:
+        with open(mean_std_save_path) as f:
+            saved_mean_std = json.load(f)
+        mean, std = saved_mean_std["mean"], saved_mean_std["std"]
+        return mean, std
+    logger.error(f"The specified path does not exists: {mean_std_save_path}")
+    raise ValueError(f"The specified path does not exists: {mean_std_save_path}")
+        
 def save_predictions(pred_labels: list, pred_probs: list, image_paths: list[str], class_names: list, 
                      metrics: tuple | None = None, save_name: str = "") -> dict:
     """

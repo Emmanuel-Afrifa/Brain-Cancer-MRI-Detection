@@ -10,6 +10,7 @@ This project builds a deep learning model to automatically detect and classify b
   - [Model Architecture](#model-architecture)
   - [Evaluation](#evaluation)
     - [Detailed breakdown/Interpretation of metrics:](#detailed-breakdowninterpretation-of-metrics)
+  - [Model Interpretability (Grad-CAM)](#model-interpretability-grad-cam)
   - [Directory Structure](#directory-structure)
   - [Usage](#usage)
   - [Relevance of the project](#relevance-of-the-project)
@@ -135,6 +136,29 @@ The image of the classification matrix of the model's performance on the hold ou
 
 
 - From the confusion matrix, we can see that the model is performing extremely well on the test set.
+
+## Model Interpretability (Grad-CAM)
+To make the model's predictions explainable, we integrated **Grad-CAM** visualizations.  
+Grad-CAM highlights the regions in the brain MRI scans that most strongly influence the model’s prediction.  
+
+This helps:
+- Verify that the model focuses on relevant tumor regions.
+- Increase transparency and trust in the predictions.
+- Identify potential bias or model failure cases.
+
+- Run the interpretability module with:
+```bash
+python -m src.main --mode interpret --input trial_predict_imgs --config configs/config.yaml --limit 10 --targetLayerName conv5 --savename intepreted_imgs
+```
+- `--limit` Determines the maximum number of GRAD-CAM visualizations to produce. Defaults to 20
+- `--savename` Name used to save the resulting graph(s)
+- `--targetLayerName` Name of the target convolutional layer (usually the last one). Defaults to `"conv5"`, which is the name of the last convolutional layer in our model.
+  
+`Figure 3` shows a sample GRAD-CAM visualization.
+<figure>
+    <img src="artifacts/graphs/intepreted_imgs_5.png" alt="GRAD-CAM Visualization" />
+    <figcaption>Figure 3: Sample GRAD-CAM Visualization</figcaption>
+</figure>
 
 
 ## Directory Structure

@@ -316,3 +316,49 @@
 2025-11-01 14:58:02,907 [INFO] src.evaluation.metrics Computing ROC-AUC score.
 2025-11-01 14:58:02,924 [INFO] src.utils.file_io Saving results (in csv format) to artifacts/results
 2025-11-01 14:58:02,937 [INFO] src.utils.file_io Saving the results (in json format) to artifacts/results
+2025-11-05 19:38:38,845 [INFO] __main__ Device detected: cpu
+2025-11-05 19:38:38,913 [INFO] src.training.optimizer Creating optimizer: Adam, lr=0.001, weight_decay=0.0001
+2025-11-05 19:38:38,914 [INFO] src.training.optimizer Create LR Scheduler StepLR
+2025-11-05 19:38:38,915 [INFO] src.data.data_splitter Splitting dataset data/Brain_Cancer into training, validation and test sets.
+2025-11-05 19:38:50,124 [INFO] src.data.data_splitter Splitting operation completed.
+2025-11-05 19:38:50,329 [INFO] __main__ Loading saved model parameters
+2025-11-05 19:38:50,740 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:38:50,753 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:38:50,816 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:38:52,561 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_0.png
+2025-11-05 19:38:57,461 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:38:57,462 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:38:57,467 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:38:57,680 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_1.png
+2025-11-05 19:39:00,243 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:00,245 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:00,251 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:00,501 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_2.png
+2025-11-05 19:39:04,008 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:04,011 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:04,019 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:04,321 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_3.png
+2025-11-05 19:39:08,827 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:08,828 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:08,838 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:09,081 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_4.png
+2025-11-05 19:39:12,186 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:12,189 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:12,196 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:12,422 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_5.png
+2025-11-05 19:39:14,628 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:14,629 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:14,635 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:14,853 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_6.png
+2025-11-05 19:39:16,817 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:16,824 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:16,831 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:17,096 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_7.png
+2025-11-05 19:39:19,704 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:19,711 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:19,717 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:19,931 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_8.png
+2025-11-05 19:39:22,324 [INFO] src.interpret.interpret Computing Class Activation Mappings (CAM)
+2025-11-05 19:39:22,325 [INFO] src.interpret.interpret Superimposing CAM heatmap with input image
+2025-11-05 19:39:22,330 [INFO] src.interpret.interpret Plotting GRAD-CAM results
+2025-11-05 19:39:22,550 [INFO] src.interpret.interpret Saving GRAD-CAM visualization: artifacts/graphs/intepreted_imgs_9.png
