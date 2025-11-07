@@ -10,7 +10,7 @@ from src.models.base_model import BrainScanCNN
 from src.training.callbacks import earlystopping
 from src.training.optimizer import get_optimizer, get_lr_scheduler
 from src.training.trainer import ModelTrainer
-from src.utils.file_io import load_config, save_predictions, load_saved_mean_std
+from src.utils.file_io import load_config, save_predictions, load_saved_mean_std, save_objects
 from src.utils.logger import setup_logging
 from src.utils.seed import set_seed
 from torch.nn import CrossEntropyLoss
@@ -56,6 +56,7 @@ def main():
     train_dataset, val_dataset, test_dataset = data_module.get_datasets(save_mean_std_path="artifacts/preprocessing/normalization_mean_std.json")
     train_loader, val_loader, test_loader = data_module.get_dataloaders()
     class_names = train_dataset.classes
+    save_objects("artifacts/preprocessing/class_names.pth", class_names)        
     
     # Initializing trainer object
     trainer = ModelTrainer(config=configs, model=model)

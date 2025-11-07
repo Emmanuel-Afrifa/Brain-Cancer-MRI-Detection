@@ -157,7 +157,7 @@ class BrainGradCAM:
         return overlay
     
     def plot_overlays(self, orig_img: torch.Tensor, cam: np.ndarray, class_list: list, overlay: np.ndarray,
-                      predicted_label: int | None = None, true_label: int | None = None, save_name: str = "") -> None:
+                      predicted_label: int | None = None, true_label: int | None = None, save_name: str = ""):
         """
         This method plots the original image, heatmap and superimposed image in the same figure.
 
@@ -208,3 +208,5 @@ class BrainGradCAM:
             logger.info(f"Saving GRAD-CAM visualization: artifacts/graphs/{save_name}.png")
             plt.savefig(f"artifacts/graphs/{save_name}.png")
         plt.show()
+
+        return fig
