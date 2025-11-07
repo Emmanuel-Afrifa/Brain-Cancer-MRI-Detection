@@ -9,9 +9,11 @@ It also has the predict function, which can be used for making inference.
 from .inference_dataset import InferenceDataset
 from .inference_loader import InferenceDataLoader
 from .predict import predict
+from .uploaded_image_dataset import get_uploaded_image_data
 
 __all__ = [
     "InferenceDataset",
     "InferenceDataLoader",
-    "predict"
+    "predict",
+    "get_uploaded_image_data"
 ]

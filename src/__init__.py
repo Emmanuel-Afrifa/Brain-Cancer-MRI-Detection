@@ -23,6 +23,15 @@ from .data.data_splitter import DataSplitter
 # evaluation
 from .evaluation import metrics
 
+# inference
+from .inference.inference_dataset import InferenceDataset
+from .inference.inference_loader import InferenceDataLoader
+from .inference.predict import predict
+from .inference.uploaded_image_dataset import get_uploaded_image_data
+
+# Interpret
+from .interpret.interpret import BrainGradCAM
+
 # model
 from .models import BrainScanCNN
 
@@ -30,14 +39,10 @@ from .models import BrainScanCNN
 from .preprocessing.convert_to_RGB import ConvertToRGB
 from .preprocessing.preprocessing import compute_mean_std
 
-
 # training
 from .training.trainer import ModelTrainer
 from .training.callbacks import earlystopping, checkpointing
 from .training.optimizer import get_optimizer, get_lr_scheduler
-
-# inference
-
 
 # utils
 from .utils.file_io import save_objects, load_config, load_objects, save_predictions
@@ -51,6 +56,11 @@ __all__ = [
     "BrainMRIDataModule", 
     "DataSplitter",
     "metrics",
+    "InferenceDataset",
+    "InferenceDataLoader",
+    "predict",
+    "get_uploaded_image_data",
+    "BrainGradCAM",
     "BrainScanCNN",
     "ConvertToRGB",
     "compute_mean_std",
