@@ -22,7 +22,7 @@ uploaded_file = st.file_uploader("Upload a Brain MRI Scan image for prediction",
 if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
     st.image(image=image, caption="Uploaded Brain scan image")
-    
+    st.session_state["uploaded_image"] = uploaded_file
 
 mode = st.selectbox("Select Prediction Mode", options=["Predict Only", "Interpret (GRAD-CAM)"])
 
@@ -38,12 +38,15 @@ if st.button("Run"):
     dataset = get_uploaded_image_data(uploaded_file)
     dataloader = InferenceDataLoader(dataset=dataset, config=configs).get_inference_loaders()
     pred, pred_probs = predict(data_loader=dataloader, model=model, device=device)
-    print(pred, class_names)
-    st.markdown(f"### Predicted Class: **{class_names[pred[0]]}**")
+    
+    st.session_state["pred"] = pred[0]
+    st.session_state["pred_probs"] = pred_probs[0]   
+    
+    st.markdown(f"### Predicted Class: **{class_names[st.session_state['pred']]}**")
     st.bar_chart(pred_probs[0])
     
     st.markdown("### Predicted Probabilities")
-    st.dataframe(pd.DataFrame([pred_probs[0]], columns=class_names))
+    st.dataframe(pd.DataFrame([st.session_state["pred_probs"]], columns=class_names))
 
     # Optionally generate Grad-CAM
     if mode.lower() == "interpret (grad-cam)":
@@ -54,17 +57,19 @@ if st.button("Run"):
         fig = grad_cam.plot_overlays(img, cam, predicted_label=target_class, overlay=overlay, 
                                      class_list=class_names, save_name="")
         
+        st.session_state["gradcam_fig"] = fig
+        st.session_state["pred_label"] = class_names[st.session_state["pred"]]
 
-        st.pyplot(fig, width='stretch', use_container_width=True)
+        st.pyplot(st.session_state["gradcam_fig"], width='stretch', use_container_width=True)
 
         buffer = BytesIO()
-        fig.savefig(buffer, format="PNG", bbox_inches="tight")
+        st.session_state["gradcam_fig"].savefig(buffer, format="PNG", bbox_inches="tight")
         buffer.seek(0)
 
         st.download_button(
             label="Download Grad-CAM",
             data=buffer,
-            file_name=f"{class_names[pred[0]]}_gradcam.png",
+            file_name=f"{class_names[st.session_state['pred']]}_gradcam.png",
             mime="image/png"
         )
 
