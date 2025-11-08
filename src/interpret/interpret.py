@@ -207,6 +207,5 @@ class BrainGradCAM:
         if save_name:
             logger.info(f"Saving GRAD-CAM visualization: artifacts/graphs/{save_name}.png")
             plt.savefig(f"artifacts/graphs/{save_name}.png")
-        plt.show()
 
         return fig
