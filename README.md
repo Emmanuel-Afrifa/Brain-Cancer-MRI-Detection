@@ -13,6 +13,7 @@ This project builds a deep learning model to automatically detect and classify b
   - [Model Interpretability (Grad-CAM)](#model-interpretability-grad-cam)
   - [Directory Structure](#directory-structure)
   - [Usage](#usage)
+  - [Deployment](#deployment)
   - [Relevance of the project](#relevance-of-the-project)
   - [Testing](#testing)
   - [Future Work](#future-work)
@@ -223,6 +224,9 @@ python -m src.main --mode interpret --input trial_predict_imgs --config configs/
 
 ***NB: Here, `trial_predict_imgs` denotes the path of the directory that contains images to be predicted.***
 
+## Deployment
+A live demo of the project has been deployed on `Streamlit`.
+- [Link to demo](https://brain-cancer-mri-detection.streamlit.app/)
 
 ## Relevance of the project
 - **Early and Accurate Diagnosis:** Automated MRI-based brain tumor classification can assist radiologists in early detection, improving treatment outcomes and reducing diagnostic workload in resource-limited hospitals.
