@@ -10,7 +10,7 @@ This project builds a deep learning model to automatically detect and classify b
   - [Model Architecture](#model-architecture)
   - [Evaluation](#evaluation)
     - [Detailed breakdown/Interpretation of metrics:](#detailed-breakdowninterpretation-of-metrics)
-  - [Model Interpretability (Grad-CAM)](#model-interpretability-grad-cam)
+  - [Model Explainability (Grad-CAM)](#model-explainability-grad-cam)
   - [Directory Structure](#directory-structure)
   - [Usage](#usage)
   - [Deployment](#deployment)
@@ -138,7 +138,7 @@ The image of the classification matrix of the model's performance on the hold ou
 
 - From the confusion matrix, we can see that the model is performing extremely well on the test set.
 
-## Model Interpretability (Grad-CAM)
+## Model Explainability (Grad-CAM)
 To make the model's predictions explainable, we integrated **Grad-CAM** visualizations.  
 Grad-CAM highlights the regions in the brain MRI scans that most strongly influence the model’s prediction.  
 
